@@ -11,7 +11,7 @@ CMDUWidget::CMDUWidget(QWidget *parent)
     : QWidget(parent),
       m_settings("deepin", "dde-dock-cmdu")
 {
-    text = " ↑    0KB/s \n ↓    0KB/s ";
+    text = " U    0KB/s \n D    0KB/s ";
     mp = 0;
     cp = 0;
 }
@@ -31,7 +31,7 @@ QSize CMDUWidget::sizeHint() const
     QFont font = qApp->font();
     font.setFamily("Noto Mono");
     QFontMetrics FM(font);
-    return FM.boundingRect(" ↑    0KB/s ").size() + QSize(0, FM.boundingRect(" ↓    0KB/s ").height());
+    return FM.boundingRect(" U    0KB/s ").size() + QSize(0, FM.boundingRect(" D    0KB/s ").height());
 }
 
 void CMDUWidget::resizeEvent(QResizeEvent *e)
